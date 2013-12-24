@@ -1,0 +1,4 @@
+husky-translations
+==================
+
+Plugin
