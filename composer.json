@@ -10,6 +10,12 @@
     "keywords": [
         "huskycms", "plugin", "module"
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Milsrepo/hc-backend.git"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": ">=5.3.3",
