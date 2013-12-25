@@ -19,7 +19,7 @@
     "license": "MIT",
     "require": {
         "php": ">=5.3.3",
-        "husky/hc-backend": "dev-master",
+        "huskycms/hc-backend": "dev-master",
         "spalax/msgfmt": "dev-master",
         "spalax/zf2-libs": "dev-master",
         "zendframework/zendframework": "2.2.0",
