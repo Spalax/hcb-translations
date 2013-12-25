@@ -33,7 +33,11 @@
     "autoload": {
         "psr-0": {
             "HcbTranslations": "src/"
-        }
+        },
+
+        "classmap": [
+            "./Module.php"
+        ]
     },
     "minimum-stability": "dev"
 }
