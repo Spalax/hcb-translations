@@ -34,6 +34,14 @@ return array(
         )
     ),
 
+    'asset_manager' => array(
+        'resolver_configs' => array(
+            'paths' => array(
+                'HcbTranslations' => __DIR__ . '/../public',
+            )
+        )
+    ),
+
     'translations' => array (
         'package_lang_dirs' => array(
             'Translations' => array(
