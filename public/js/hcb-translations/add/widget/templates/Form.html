@@ -1,0 +1,35 @@
+<form data-dojo-attach-point="containerNode, enterNode"
+      data-dojo-attach-event="onreset:_onReset, onsubmit:_onSubmit">
+    ${!_t.nameLabel}
+    <input class="${baseClass}Name"
+           data-dojo-type="dijit/form/ValidationTextBox"
+           data-dojo-props='name:"code",
+                            required: true,
+                            regExp:"[a-z]{2}(\-[A-Z]{2})?",
+                            invalidMessage:"${!_t.invalidLanguageCode}",
+                            missingMessage: "${!_t.missingLanguageCode}"' />
+    ${!_t.nameHelp}
+
+    ${!_t.moduleLabel}
+    <input class="${baseClass}Module"
+           data-dojo-type="dijit/form/FilteringSelect"
+           data-dojo-attach-point="moduleWidget"
+           data-dojo-props='name:"module",
+                            required: true,
+                            searchAttr: "name",
+                            missingMessage: "${!_t.missingModule}"' />
+    ${!_t.moduleHelp}
+
+    <input class="${baseClass}SaveButton"
+           data-dojo-type="dojo-common/form/BusyButton"
+           data-dojo-attach-event="onClick: save"
+           data-dojo-attach-point="saveWidget"
+           data-dojo-props='name:"save",
+                            label:"${!_t.saveButton}"' />
+
+    <input class="${baseClass}ResetButton"
+           data-dojo-type="dijit/form/Button"
+           data-dojo-attach-event="onClick: reset"
+           data-dojo-props='name:"reset",
+                            label:"${!_t.resetButton}"' />
+</form>

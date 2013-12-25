@@ -1,0 +1,25 @@
+{
+    "name": "translations",
+    "author": "Mylotskyi Oleksii",
+    "version": "0.0.1",
+    "description": "Translations management module for HuskyCMS",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "Mylotskyi Oleksii",
+            "email": "oleksii.mylotskyi@milsdev.com"
+        }
+    ],
+    "directories": {
+        "lib": "."
+    },
+
+    "main": "./backend",
+    "icon": "http://huskycms.com/images/icon.jpg",
+    "dojoBuild": "package.js"
+}

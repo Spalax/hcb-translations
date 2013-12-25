@@ -1,0 +1,30 @@
+define({
+    root: {
+        addButtonLabel: 'Add New',
+        deleteButtonLabel: 'Delete Selected',
+        alertNoRowsSelectedForDelete: 'You must select at least one translation to delete.',
+        confirmDelete: 'Are you sure, that you want to delete selected languages ? This operation can not be undone.',
+        labelId: 'Id',
+        labelCode: 'Language',
+        labelModule: 'Module',
+        labelGenerated: 'Generated',
+        labelUpdated: 'Last update',
+        loadingMessage: 'Loading ...',
+        labelTranslationsControl: 'Translations control',
+        uploadLinkLabel: 'Upload Files',
+        uploadDialogTitle: 'Upload language files',
+        downloadLinkLabel: 'Download Package',
+        jsFileUploadMessage: 'Uploading js file ...',
+        jsFileFailedUploadMessage: 'Could not upload js file',
+        jsFileUploaderLabel: 'Select JS file ...',
+        poFileUploadMessage: 'Uploading po file ...',
+        poFileFailedUploadMessage: 'Could not upload po file',
+        poFileUploaderLabel: 'Select PO file ...',
+        uploadedNeverMessage: 'never',
+        jsFileLabel: 'JS File',
+        jsFileHelp: 'JS file it is file with extension .js at the end.',
+        poFileLabel: 'PO File',
+        poFileHelp: 'PO file it is file with extension .po at the end.',
+        noDataMessage: 'No data found by request'
+    }
+});

@@ -1,0 +1,12 @@
+define([
+    'dojo/_base/declare',
+    'dojo/store/JsonRest',
+    'dojo/store/Cache',
+    'dojo/store/Memory',
+    'dojo/store/Observable'
+], function (declare, JsonRest, Cache, Memory, Observable) {
+    return Observable(Cache(JsonRest({
+        target: '/superman/translations',
+        idProperty: 'id'
+    }), Memory()));
+});
