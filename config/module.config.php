@@ -1,12 +1,6 @@
 <?php
 return array(
     'router' => include __DIR__ . '/module/router.config.php',
-    'view_helpers'=> include __DIR__ . '/module/viewhelpers.config.php',
-    'controller_plugins' => array(
-        'invokables' => array(
-            'Params' => 'Zf2Libs\Mvc\Controller\Plugin\Params'
-        )
-    ),
 
     'doctrine' => array(
         'driver' => array(
@@ -44,7 +38,7 @@ return array(
 
     'translations' => array (
         'package_lang_dirs' => array(
-            'Translations' => array(
+            'HcbTranslations' => array(
                 'gettext' => array(
                     'path'=> __DIR__ . '/../../HcbTranslations/language',
                     'mo' => '%s.mo',

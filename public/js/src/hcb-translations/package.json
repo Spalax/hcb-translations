@@ -1,8 +1,8 @@
 {
-    "name": "translations",
+    "name": "hcb-translations",
     "author": "Mylotskyi Oleksii",
     "version": "0.0.1",
-    "description": "Translations management module for HuskyCMS",
+    "description": "Translations management module for HuskyCMS Backend",
     "licenses": [
         {
             "type": "MIT",
