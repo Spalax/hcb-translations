@@ -15,7 +15,6 @@ return array(
         )
     ),
 
-    'service_manager' => include __DIR__ . '/module/service_manager.config.php',
     'di' => include __DIR__ . '/module/di.config.php',
 
     'translator' => array (

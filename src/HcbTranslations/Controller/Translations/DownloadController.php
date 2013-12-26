@@ -2,7 +2,7 @@
 namespace HcbTranslations\Controller\Translations;
 
 use HcBackend\Controller\Collection\AbstractCommonResourceController;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Service\FetchServiceInterface;
 use HcbTranslations\Service\Translations\Translation\CompressionService;
 use HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse;
@@ -22,7 +22,7 @@ class DownloadController extends AbstractCommonResourceController
     protected $compressionService;
 
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
@@ -30,12 +30,12 @@ class DownloadController extends AbstractCommonResourceController
      * @param FetchServiceInterface $fetchService
      * @param CompressionService $compressionService
      * @param StatusMessageDataModelFactoryInterface $jsonResponseModelFactory
-     * @param TranslationsOptions $options
+     * @param ModuleOptions $options
      */
     public function __construct(FetchServiceInterface $fetchService,
                                 CompressionService $compressionService,
                                 StatusMessageDataModelFactoryInterface $jsonResponseModelFactory,
-                                TranslationsOptions $options)
+                                ModuleOptions $options)
     {
         parent::__construct($fetchService);
 

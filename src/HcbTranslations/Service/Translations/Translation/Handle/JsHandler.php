@@ -3,7 +3,7 @@ namespace HcbTranslations\Service\Translations\Translation\Handle;
 
 use HcbTranslations\Data\Translations\UploadInterface;
 use HcbTranslations\Entity\Translation;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use Zend\Filter\File\Rename;
 
 class JsHandler extends AbstractHandler implements HandlerInterface
@@ -15,9 +15,9 @@ class JsHandler extends AbstractHandler implements HandlerInterface
 
     /**
      * @param UploadInterface $uploadData
-     * @param TranslationsOptions $options
+     * @param ModuleOptions $options
      */
-    public function __construct(UploadInterface $uploadData, TranslationsOptions $options)
+    public function __construct(UploadInterface $uploadData, ModuleOptions $options)
     {
         parent::__construct($options);
 

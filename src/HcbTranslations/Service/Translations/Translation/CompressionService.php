@@ -2,7 +2,7 @@
 namespace HcbTranslations\Service\Translations\Translation;
 
 use HcbTranslations\Entity\Translation;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse;
 use Doctrine\ORM\EntityManager;
 use Zend\Filter\Compress;
@@ -15,7 +15,7 @@ class CompressionService
     protected $entityManager;
 
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
@@ -26,11 +26,11 @@ class CompressionService
 
     /**
      * @param EntityManager $entityManager
-     * @param \HcbTranslations\Options\TranslationsOptions $options
+     * @param \HcbTranslations\Options\ModuleOptions $options
      * @param \HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse $response
      */
     public function __construct(EntityManager $entityManager,
-                                TranslationsOptions $options,
+                                ModuleOptions $options,
                                 CompressionResponse $response)
     {
         $this->entityManager = $entityManager;

@@ -3,7 +3,7 @@ namespace HcbTranslations\Service\Translations;
 
 use HcbTranslations\Entity\Translation;
 use HcbTranslations\Data\Translations\CreateInterface;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse;
 use Doctrine\ORM\EntityManager;
 
@@ -20,18 +20,18 @@ class CreateService
     protected $createResponse;
 
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
     /**
      * @param EntityManager $entityManager
      * @param \HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse $createResponse
-     * @param \HcbTranslations\Options\TranslationsOptions $options
+     * @param \HcbTranslations\Options\ModuleOptions $options
      */
     public function __construct(EntityManager $entityManager,
                                 SaveResponse $createResponse,
-                                TranslationsOptions $options)
+                                ModuleOptions $options)
     {
         $this->entityManager = $entityManager;
         $this->createResponse = $createResponse;

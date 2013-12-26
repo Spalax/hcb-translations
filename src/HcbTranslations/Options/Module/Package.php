@@ -1,5 +1,5 @@
 <?php
-namespace HcbTranslations\Options\Translations;
+namespace HcbTranslations\Options\Module;
 
 use HcBackend\Options\Exception;
 

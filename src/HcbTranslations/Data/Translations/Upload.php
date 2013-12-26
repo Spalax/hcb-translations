@@ -3,7 +3,7 @@ namespace HcbTranslations\Data\Translations;
 
 use HcBackend\Data\DataMessagesInterface;
 use HcBackend\Data\Exception\DomainException;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use Zend\Filter\File\RenameUpload;
 use Zend\Http\PhpEnvironment\Request;
 use Zend\I18n\Translator\Translator;
@@ -31,7 +31,7 @@ class Upload extends AbstractInputFilter implements UploadInterface, DataMessage
 
     public function __construct(Request $request,
                                 Translator $translator,
-                                TranslationsOptions $options)
+                                ModuleOptions $options)
     {
         $input = new FileInput('jsFile');
         $input->setAllowEmpty(true);

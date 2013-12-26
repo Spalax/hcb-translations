@@ -2,7 +2,7 @@
 namespace HcbTranslations\Service\Translations\Translation;
 
 use HcbTranslations\Entity\Translation;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use Doctrine\ORM\EntityManager;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
 
@@ -14,7 +14,7 @@ class DeleteService
     protected $entityManager;
 
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
@@ -25,11 +25,11 @@ class DeleteService
 
     /**
      * @param EntityManager $entityManager
-     * @param TranslationsOptions $options
+     * @param ModuleOptions $options
      * @param \Zf2Libs\Stdlib\Service\Response\Messages\Response $response
      */
     public function __construct(EntityManager $entityManager,
-                                TranslationsOptions $options,
+                                ModuleOptions $options,
                                 Response $response)
     {
         $this->entityManager = $entityManager;

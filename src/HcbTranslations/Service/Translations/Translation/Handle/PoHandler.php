@@ -4,7 +4,7 @@ namespace HcbTranslations\Service\Translations\Translation\Handle;
 
 use HcbTranslations\Data\Translations\UploadInterface;
 use HcbTranslations\Entity\Translation;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use MsgFmt\Generate;
 use Zend\Filter\File\Rename;
 use Zend\Serializer\Adapter\MsgPack;
@@ -17,7 +17,7 @@ class PoHandler extends AbstractHandler implements HandlerInterface
     protected $fileName = '';
 
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
@@ -28,11 +28,11 @@ class PoHandler extends AbstractHandler implements HandlerInterface
 
     /**
      * @param UploadInterface $uploadData
-     * @param \HcbTranslations\Options\TranslationsOptions $options
+     * @param \HcbTranslations\Options\ModuleOptions $options
      * @param \MsgFmt\Generate $moGenerator
      */
     public function __construct(UploadInterface $uploadData,
-                                TranslationsOptions $options,
+                                ModuleOptions $options,
                                 Generate $moGenerator)
     {
         parent::__construct($options);

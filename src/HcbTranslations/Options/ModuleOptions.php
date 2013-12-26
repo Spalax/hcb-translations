@@ -1,11 +1,11 @@
 <?php
 namespace HcbTranslations\Options;
 
-use HcbTranslations\Options\Translations\Package;
-use HcbTranslations\Options\Translations\Packages;
+use HcbTranslations\Options\Module\Package;
+use HcbTranslations\Options\Module\Packages;
 use Zend\Stdlib\AbstractOptions;
 
-class TranslationsOptions extends AbstractOptions
+class ModuleOptions extends AbstractOptions
 {
     /**
      * @var string

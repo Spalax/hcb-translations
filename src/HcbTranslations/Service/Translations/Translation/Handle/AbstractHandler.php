@@ -1,20 +1,20 @@
 <?php
 namespace HcbTranslations\Service\Translations\Translation\Handle;
 
-use HcbTranslations\Options\Translations\Package;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\Module\Package;
+use HcbTranslations\Options\ModuleOptions;
 
 abstract class AbstractHandler
 {
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
     /**
-     * @param TranslationsOptions $options
+     * @param ModuleOptions $options
      */
-    public function __construct(TranslationsOptions $options)
+    public function __construct(ModuleOptions $options)
     {
         $this->options = $options;
     }

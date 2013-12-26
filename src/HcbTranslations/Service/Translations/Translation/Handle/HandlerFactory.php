@@ -2,7 +2,7 @@
 namespace HcbTranslations\Service\Translations\Translation\Handle;
 
 use HcbTranslations\Data\Translations\UploadInterface;
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use Zend\Di\Di;
 use Zend\ServiceManager\Di\DiServiceFactory;
 use Zend\ServiceManager\ServiceManager;
@@ -15,15 +15,15 @@ class HandlerFactory
     protected $di;
 
     /**
-     * @var \HcbTranslations\Options\TranslationsOptions
+     * @var \HcbTranslations\Options\ModuleOptions
      */
     protected $options;
 
     /**
      * @param \Zend\Di\Di|\Zend\ServiceManager\ServiceManager $di
-     * @param \HcbTranslations\Options\TranslationsOptions $options
+     * @param \HcbTranslations\Options\ModuleOptions $options
      */
-    public function __construct(Di $di, TranslationsOptions $options)
+    public function __construct(Di $di, ModuleOptions $options)
     {
         $this->di = $di;
         $this->options = $options;

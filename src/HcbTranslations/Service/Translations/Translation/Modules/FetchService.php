@@ -1,7 +1,7 @@
 <?php
 namespace HcbTranslations\Service\Translations\Translation\Modules;
 
-use HcbTranslations\Options\TranslationsOptions;
+use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Service\FetchCollectionServiceInterface;
 use HcbTranslations\Service\Filtration\Collection\FiltrationServiceInterface;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -21,18 +21,18 @@ class FetchService implements FetchCollectionServiceInterface
     protected $filtration;
 
     /**
-     * @var TranslationsOptions
+     * @var ModuleOptions
      */
     protected $options;
 
     /**
      * @param EntityManager $entityManager
      * @param FiltrationServiceInterface $filtrationService
-     * @param TranslationsOptions $options
+     * @param ModuleOptions $options
      */
     public function __construct(EntityManager $entityManager,
                                 FiltrationServiceInterface $filtrationService,
-                                TranslationsOptions $options)
+                                ModuleOptions $options)
     {
         $this->entityManager = $entityManager;
         $this->filtration = $filtrationService;
