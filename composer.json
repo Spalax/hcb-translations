@@ -14,7 +14,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Milsrepo/hc-backend.git"
+            "url": "https://github.com/Spalax/zf2-libs.git"
+        },
+        {
+            "type": "composer",
+            "url": "http://spalax:spalax@packages.milsdev.com"
         }
     ],
     "license": "MIT",
