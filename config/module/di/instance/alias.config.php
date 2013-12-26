@@ -1,14 +1,12 @@
 <?php
 return array(
-    'ZfcUser-LoginForm' => 'ZfcUser\Form\Login',
-    'Collection-Clients-List' => 'HcbTranslations\Controller\Collection\CommonListController',
-    'Collection-Clients-Block' => 'HcbTranslations\Controller\Collection\CommonDataController',
-
-    'Collection-Translations-Resource' => 'HcbTranslations\Controller\Collection\CommonResourceController',
-    'Collection-Translations-List' => 'HcbTranslations\Controller\Collection\CommonListController',
-    'Collection-Translations-Modules-List' => 'HcbTranslations\Controller\Collection\CommonListController',
-    'Collection-Translations-Create' => 'HcbTranslations\Controller\Collection\CommonDataController',
-    'Collection-Translations-Resource-Delete' => 'HcbTranslations\Controller\Collection\CommonResourceDeleteController',
-    'Collection-Translations-Resource-File-Upload' => 'HcbTranslations\Controller\Collection\CommonResourceDataController',
+    'Collection-Translations-Resource' => 'HcBackend\Controller\Collection\CommonResourceController',
+    'Collection-Translations-List' => 'HcBackend\Controller\Collection\CommonListController',
+    'Collection-Translations-Modules-List' => 'HcBackend\Controller\Collection\CommonListController',
+    'Collection-Translations-Create' => 'HcBackend\Controller\Collection\CommonDataController',
+    'Collection-Translations-Resource-Delete' =>
+       'HcBackend\Controller\Collection\CommonResourceDeleteController',
+    'Collection-Translations-Resource-File-Upload' =>
+       'HcBackend\Controller\Collection\CommonResourceDataController',
     'Collection-Translations-Resource-Download' => 'HcbTranslations\Controller\Translations\DownloadController'
 );

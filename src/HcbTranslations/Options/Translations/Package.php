@@ -12,8 +12,8 @@ class Package
 
     /**
      * @param array $package
-     * @throws \HcbTranslations\Options\Exception\DomainException
-     * @throws \HcbTranslations\Options\Exception\InvalidArgumentException
+     * @throws \HcBackend\Options\Exception\DomainException
+     * @throws \HcBackend\Options\Exception\InvalidArgumentException
      */
     public function __construct(array $package)
     {

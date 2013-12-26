@@ -13,7 +13,7 @@ class Packages
     /**
      * @param string $name
      * @param Package $package
-     * @throws \HcbTranslations\Options\Exception\InvalidArgumentException
+     * @throws \HcBackend\Options\Exception\InvalidArgumentException
      */
     public function addPackage($name, Package $package)
     {

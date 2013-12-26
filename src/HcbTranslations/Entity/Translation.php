@@ -2,6 +2,7 @@
 namespace HcbTranslations\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use HcBackend\Entity\EntityInterface;
 
 /**
  * Translation

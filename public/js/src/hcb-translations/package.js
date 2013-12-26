@@ -1,5 +1,5 @@
 var miniExcludes = {
-		"backend-translations/README.md": 1
+		"hcb-translations/README.md": 1
 	},
 	amdExcludes = {
 	},

@@ -1,5 +1,6 @@
 {
     "name": "huskycms/hcb-translations",
+    "type": "huskycms-backend-plugin",
     "description": "Managing translations plugin for backend area of the HuskyCMS",
     "authors": [
         {

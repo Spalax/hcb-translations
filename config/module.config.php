@@ -54,6 +54,19 @@ return array(
         )
     ),
 
+    'huskycms' => array(
+        'hc_backend'=> array(
+            'packages' => array(
+                'hcb_translations' => array(
+                    'js'=>array(
+                        'type'=>'content',
+                        'http_path'=>'/js/src/hcb-translations'
+                    )
+                )
+            )
+        )
+    ),
+
     'view_manager' => array(
         'strategies' => array(
             'Zf2Libs\View\Strategy\UploaderStrategy'

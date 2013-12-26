@@ -5,7 +5,7 @@ define([
     'dijit/_TemplatedMixin',
     'dijit/_WidgetsInTemplateMixin',
     'dojo-common/dialog/DestroyableDialog',
-    'backend/router',
+    'hc-backend/router',
     '../../store/Translations',
     'dojo/i18n!../../nls/List',
     'dojo/text!./templates/UpdateForm.html',

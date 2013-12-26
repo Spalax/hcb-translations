@@ -4,7 +4,7 @@ define([
     'dijit/_Widget',
     'dijit/_TemplatedMixin',
     'dojo/request',
-    'backend/router',
+    'hc-backend/router',
     'dojo-common/response/_MessageMixin',
     'dojo-common/response/_StatusMixin',
     'dojo-common/response/_DataMixin',

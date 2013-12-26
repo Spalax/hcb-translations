@@ -1,6 +1,6 @@
 define([
     'dojo/_base/declare',
-    'backend/layout/main/content/_ContentMixin',
+    'hc-backend/layout/main/content/_ContentMixin',
     'dijit/_TemplatedMixin',
     './widget/Form',
     'dojo/text!./templates/Container.html'
