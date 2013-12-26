@@ -20,11 +20,11 @@ class Module
 
         $config = $sm->get('config');
 
-        if (!array_key_exists('hcb_translations', $config)) {
-            throw new \HcBackend\Options\Exception\DomainException("hcb_translations key must be defined in configuration");
+        if (!array_key_exists('hcb-translations', $config)) {
+            throw new \HcBackend\Options\Exception\DomainException("hcb-translations key must be defined in configuration");
         }
 
-        $options = new ModuleOptions($config['hcb_translations']);
+        $options = new ModuleOptions($config['hcb-translations']);
         $di->instanceManager()->addSharedInstance($options, 'HcbTranslations\Options\ModuleOptions');
     }
 

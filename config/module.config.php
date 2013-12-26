@@ -35,7 +35,7 @@ return array(
         )
     ),
 
-    'translations' => array (
+    'hcb-translations' => array (
         'package_lang_dirs' => array(
             'HcbTranslations' => array(
                 'gettext' => array(
@@ -48,9 +48,9 @@ return array(
     ),
 
     'huskycms' => array(
-        'hc_backend'=> array(
+        'hc-backend'=> array(
             'packages' => array(
-                'hcb_translations' => array(
+                'hcb-translations' => array(
                     'js'=>array(
                         'type'=>'content',
                         'http_path'=>'/js/src/hcb-translations'
