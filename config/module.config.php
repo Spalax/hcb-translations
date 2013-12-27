@@ -17,32 +17,10 @@ return array(
 
     'di' => include __DIR__ . '/module/di.config.php',
 
-    'translator' => array (
-        'translation_file_patterns' => array (
-            'HcbTranslations' => array (
-                'type'     => 'gettext',
-                'base_dir' => __DIR__ . '/../language',
-                'pattern'  => '%s.mo'
-            )
-        )
-    ),
-
     'asset_manager' => array(
         'resolver_configs' => array(
             'paths' => array(
                 'HcbTranslations' => __DIR__ . '/../public',
-            )
-        )
-    ),
-
-    'hcb-translations' => array (
-        'package_lang_dirs' => array(
-            'HcbTranslations' => array(
-                'gettext' => array(
-                    'path'=> __DIR__ . '/../../HcbTranslations/language',
-                    'mo' => '%s.mo',
-                    'pot' => __DIR__ . '/../../HcbTranslations/language/messages.pot'
-                )
             )
         )
     ),

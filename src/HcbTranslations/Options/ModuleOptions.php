@@ -3,6 +3,7 @@ namespace HcbTranslations\Options;
 
 use HcbTranslations\Options\Module\Package;
 use HcbTranslations\Options\Module\Packages;
+use HcBackend\Options\Exception;
 use Zend\Stdlib\AbstractOptions;
 
 class ModuleOptions extends AbstractOptions
