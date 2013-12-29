@@ -9,9 +9,9 @@ define([
     'dojo/i18n!../nls/List',
     'dojo/request',
     'hc-backend/router',
-    './widget/Grid',
+    'hcb-translations/list/widget/Grid',
     'dijit/form/Button',
-    '../store/Translations',
+    'hcb-translations/store/Translations',
     'dojo-common/dialog/ConfirmDialog',
     'dojo-common/dialog/AlertDialog'
 ], function (declare, array, lang, on, _ContentMixin, _TemplatedMixin,
