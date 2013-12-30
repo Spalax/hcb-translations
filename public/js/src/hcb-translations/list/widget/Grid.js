@@ -22,7 +22,7 @@ define([
              ColumnHider, ColumnResizer, CompoundColumns, DijitRegistry,
              _Selection, _ListCustomRowsWidget, Keyboard, selector,
              UpdateDialog, Download, put, on, router, translation) {
-    var _store = TranslationsStore;
+
     return declare([
         OnDemandGrid,
         ColumnHider,
@@ -33,7 +33,7 @@ define([
         DijitRegistry,
         _ListCustomRowsWidget
     ], {
-        store: _store,
+        store: TranslationsStore,
         columns: [
             selector({
                 label: '',

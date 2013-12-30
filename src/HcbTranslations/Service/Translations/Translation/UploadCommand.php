@@ -1,9 +1,10 @@
 <?php
 namespace HcbTranslations\Service\Translations\Translation;
 
-use HcbTranslations\Data\Translations\UploadInterface;
+use HcbTranslations\Data\Translations\Translation\UploadInterface;
 use HcBackend\Entity\EntityInterface;
 use HcBackend\Service\ResourceCommandInterface;
+use HcbTranslations\Entity\Translation;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
 
 class UploadCommand implements ResourceCommandInterface
@@ -26,7 +27,7 @@ class UploadCommand implements ResourceCommandInterface
     }
 
     /**
-     * @param EntityInterface $entity
+     * @param Translation $entity
      * @return Response
      */
     public function execute(EntityInterface $entity)

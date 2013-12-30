@@ -3,7 +3,7 @@ namespace HcbTranslations\Controller\Translations;
 
 use HcBackend\Controller\Collection\AbstractCommonResourceController;
 use HcbTranslations\Options\ModuleOptions;
-use HcbTranslations\Service\FetchServiceInterface;
+use HcBackend\Service\FetchServiceInterface;
 use HcbTranslations\Service\Translations\Translation\CompressionService;
 use HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse;
 use Zend\Mvc\MvcEvent;

@@ -2,6 +2,7 @@
 namespace HcbTranslations;
 
 use Zend\Mvc\MvcEvent;
+use HcBackend\Options\Exception;
 use HcbTranslations\Options\ModuleOptions;
 
 class Module
@@ -9,6 +10,7 @@ class Module
 
     /**
      * @param MvcEvent $e
+     * @throws \HcBackend\Options\Exception\DomainException
      */
     public function onBootstrap(MvcEvent $e)
     {
@@ -21,7 +23,7 @@ class Module
         $config = $sm->get('config');
 
         if (!array_key_exists('hcb-translations', $config)) {
-            throw new \HcBackend\Options\Exception\DomainException("hcb-translations key must be defined in configuration");
+            throw new Exception\DomainException("hcb-translations key must be defined in configuration");
         }
 
         $options = new ModuleOptions($config['hcb-translations']);

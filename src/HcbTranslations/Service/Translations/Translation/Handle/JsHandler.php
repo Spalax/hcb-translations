@@ -1,7 +1,7 @@
 <?php
 namespace HcbTranslations\Service\Translations\Translation\Handle;
 
-use HcbTranslations\Data\Translations\UploadInterface;
+use HcbTranslations\Data\Translations\Translation\UploadInterface;
 use HcbTranslations\Entity\Translation;
 use HcbTranslations\Options\ModuleOptions;
 use Zend\Filter\File\Rename;

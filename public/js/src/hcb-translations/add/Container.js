@@ -2,7 +2,7 @@ define([
     'dojo/_base/declare',
     'hc-backend/layout/main/content/_ContentMixin',
     'dijit/_TemplatedMixin',
-    'hcb-translations/widget/Form',
+    'hcb-translations/add/widget/Form',
     'dojo/text!./templates/Container.html'
 ], function (declare, _ContentMixin, _TemplatedMixin, Form, template) {
     return declare([

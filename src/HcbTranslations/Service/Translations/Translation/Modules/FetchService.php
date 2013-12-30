@@ -2,8 +2,8 @@
 namespace HcbTranslations\Service\Translations\Translation\Modules;
 
 use HcbTranslations\Options\ModuleOptions;
-use HcbTranslations\Service\FetchCollectionServiceInterface;
-use HcbTranslations\Service\Filtration\Collection\FiltrationServiceInterface;
+use HcBackend\Service\FetchCollectionServiceInterface;
+use HcBackend\Service\Filtration\Collection\FiltrationServiceInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
 use Zend\Stdlib\Parameters;

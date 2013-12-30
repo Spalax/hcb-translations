@@ -25,33 +25,51 @@ class ModuleOptions extends AbstractOptions
 
     /**
      * @param string $langTemporaryHttpPath
+     * @throws Exception\InvalidArgumentException
      */
     public function setLangTemporaryHttpPath($langTemporaryHttpPath)
     {
+        if (empty($langTemporaryHttpPath)) {
+                throw new Exception\InvalidArgumentException("Translations lang_temporary_path must be defined");
+        }
+
         $this->langTemporaryHttpPath = $langTemporaryHttpPath;
     }
 
     /**
      * @return string
+     * @throws Exception\InvalidArgumentException
      */
     public function getLangTemporaryHttpPath()
     {
+        if (empty($this->langTemporaryPath)) {
+            throw new Exception\InvalidArgumentException("Translations lang_temporary_http_path must be defined and must be readable");
+        }
         return $this->langTemporaryHttpPath;
     }
 
     /**
      * @param string $langTemporaryPath
+     * @throws Exception\InvalidArgumentException
      */
     public function setLangTemporaryPath($langTemporaryPath)
     {
+        if (empty($langTemporaryPath) || !is_dir($langTemporaryPath) || !is_writable($langTemporaryPath)) {
+            throw new Exception\InvalidArgumentException("Translations lang_temporary_path must be existing writable directory");
+        }
+
         $this->langTemporaryPath = $langTemporaryPath;
     }
 
     /**
      * @return string
+     * @throws Exception\InvalidArgumentException
      */
     public function getLangTemporaryPath()
     {
+        if (empty($this->langTemporaryPath)) {
+            throw new Exception\InvalidArgumentException("Translations lang_temporary_path must be defined");
+        }
         return $this->langTemporaryPath;
     }
 

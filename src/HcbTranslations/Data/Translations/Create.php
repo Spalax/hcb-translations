@@ -3,7 +3,7 @@ namespace HcbTranslations\Data\Translations;
 
 use HcBackend\Data\DataMessagesInterface;
 use HcbTranslations\Service\Translations\Translation\Modules\FetchService;
-use HcbTranslations\Stdlib\Extractor\Request\Payload\Extractor;
+use HcBackend\Stdlib\Extractor\Request\Payload\Extractor;
 use Doctrine\ORM\QueryBuilder;
 use Zend\Filter\StringToLower;
 use Zend\Http\PhpEnvironment\Request;
@@ -29,6 +29,12 @@ class Create extends AbstractInputFilter implements CreateInterface, DataMessage
      */
     protected $clientsEntities = array();
 
+    /**
+     * @param Request $request
+     * @param Extractor $requestExtractor
+     * @param FetchService $fetchService
+     * @param Translator $translator
+     */
     public function __construct(Request $request,
                                 Extractor $requestExtractor,
                                 FetchService $fetchService,

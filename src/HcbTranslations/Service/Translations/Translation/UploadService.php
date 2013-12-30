@@ -1,7 +1,7 @@
 <?php
 namespace HcbTranslations\Service\Translations\Translation;
 
-use HcbTranslations\Data\Translations\UploadInterface;
+use HcbTranslations\Data\Translations\Translation\UploadInterface;
 use HcbTranslations\Entity\Translation;
 use HcbTranslations\Service\Translations\Translation\Handle\HandlerFactory;
 use HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse;
@@ -41,8 +41,8 @@ class UploadService
 
     /**
      * @param Translation $translationEntity
-     * @param \HcbTranslations\Data\Translations\UploadInterface $uploadData
-     * @internal param \HcbTranslations\Data\Translations\UploadInterface $updateData
+     * @param \HcbTranslations\Data\Translations\Translation\UploadInterface $uploadData
+     * @internal param \HcbTranslations\Data\Translations\Translation\UploadInterface $updateData
      * @return SaveResponse
      */
     public function upload(Translation $translationEntity, UploadInterface $uploadData)

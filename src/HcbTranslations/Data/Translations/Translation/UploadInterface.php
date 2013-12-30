@@ -1,7 +1,7 @@
 <?php
-namespace HcbTranslations\Data\Translations;
+namespace HcbTranslations\Data\Translations\Translation;
 
-use HcbTranslations\Data\Exception\DomainException;
+use HcBackend\Data\Exception\DomainException;
 
 interface UploadInterface
 {

@@ -1,7 +1,7 @@
 <?php
 namespace HcbTranslations\Service\Translations\Translation\Handle;
 
-use HcbTranslations\Data\Translations\UploadInterface;
+use HcbTranslations\Data\Translations\Translation\UploadInterface;
 use HcbTranslations\Options\ModuleOptions;
 use Zend\Di\Di;
 use Zend\ServiceManager\Di\DiServiceFactory;
