@@ -6,7 +6,7 @@ define([
     'dijit/_WidgetsInTemplateMixin',
     'dojo-common/dialog/DestroyableDialog',
     'hc-backend/router',
-    '../../store/Translations',
+    'hcb-translations/store/Translations',
     'dojo/i18n!../../nls/List',
     'dojo/text!./templates/UpdateForm.html',
     'dojo-common/form/FileInputAuto'
