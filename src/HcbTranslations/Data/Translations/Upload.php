@@ -4,10 +4,10 @@ namespace HcbTranslations\Data\Translations;
 use HcBackend\Data\DataMessagesInterface;
 use HcBackend\Data\Exception\DomainException;
 use HcbTranslations\Options\ModuleOptions;
-use Zend\Filter\File\RenameUpload;
+use Zend\Di\Di;
+
 use Zend\Http\PhpEnvironment\Request;
 use Zend\I18n\Translator\Translator;
-use Zend\InputFilter\FileInput;
 use Zend\Validator\File\Extension;
 use Zend\Validator\File\MimeType;
 use Zf2Libs\Data\AbstractInputFilter;
@@ -29,11 +29,18 @@ class Upload extends AbstractInputFilter implements UploadInterface, DataMessage
      */
     protected $poFileValue = array();
 
+    /**
+     * @param Request $request
+     * @param Translator $translator
+     * @param ModuleOptions $options
+     * @param Di $di
+     */
     public function __construct(Request $request,
                                 Translator $translator,
-                                ModuleOptions $options)
+                                ModuleOptions $options,
+                                Di $di)
     {
-        $input = new FileInput('jsFile');
+        $input = $di->get('Zend\InputFilter\FileInput', array('jsFile'));
         $input->setAllowEmpty(true);
         $input->setRequired(false);
         $input->getValidatorChain()
@@ -41,15 +48,15 @@ class Upload extends AbstractInputFilter implements UploadInterface, DataMessage
               ->attach(new Extension('js'));
 
         $input->getFilterChain()
-              ->attach(new RenameUpload(array(
+              ->attach($di->get('Zend\Filter\File\RenameUpload', array(array(
                    "target"    => realpath($options->getLangTemporaryPath()).'/js',
                    "use_upload_extension" => true,
                    "randomize" => true
-              )));
+              ))));
 
         $this->add($input);
 
-        $input = new FileInput('poFile');
+        $input = $di->get('Zend\InputFilter\FileInput', array('poFile'));
         $input->setAllowEmpty(true);
         $input->setRequired(false);
         $input->getValidatorChain()
@@ -57,11 +64,11 @@ class Upload extends AbstractInputFilter implements UploadInterface, DataMessage
               ->attach(new Extension('po'));
 
         $input->getFilterChain()
-            ->attach(new RenameUpload(array(
+            ->attach($di->get('Zend\Filter\File\RenameUpload', array(array(
                 "target"    => realpath($options->getLangTemporaryPath()).'/po',
                 "use_upload_extension" => true,
                 "randomize" => true
-            )));
+            ))));
 
         $this->add($input);
 
