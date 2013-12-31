@@ -22,6 +22,11 @@
         }
     ],
     "license": "MIT",
+
+    "require-dev": {
+        "phpunit/PHPUnit": "3.7.*"
+    },
+
     "require": {
         "php": ">=5.3.3",
         "huskycms/hc-backend": "dev-master",
