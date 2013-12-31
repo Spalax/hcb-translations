@@ -4,17 +4,10 @@ namespace HcbTranslations\Data\Translations;
 use HcBackend\Data\DataMessagesInterface;
 use HcbTranslations\Service\Translations\Translation\Modules\FetchService;
 use HcBackend\Stdlib\Extractor\Request\Payload\Extractor;
-use Doctrine\ORM\QueryBuilder;
-use Zend\Filter\StringToLower;
+use Zend\Di\Di;
 use Zend\Http\PhpEnvironment\Request;
 use Zend\I18n\Translator\Translator;
-use Zend\I18n\Validator\Alnum;
-use Zend\InputFilter\Input;
-use Zend\Json\Json;
-use Zend\Validator\Callback as CallbackValidator;
-use Zend\Validator\Digits;
-use Zend\Validator\Regex;
-use Zend\Validator\StringLength;
+use Zend\Validator\Callback;
 use Zf2Libs\Data\AbstractInputFilter;
 
 class Create extends AbstractInputFilter implements CreateInterface, DataMessagesInterface
@@ -34,32 +27,33 @@ class Create extends AbstractInputFilter implements CreateInterface, DataMessage
      * @param Extractor $requestExtractor
      * @param FetchService $fetchService
      * @param Translator $translator
+     * @param Di $di
      */
     public function __construct(Request $request,
                                 Extractor $requestExtractor,
                                 FetchService $fetchService,
-                                Translator $translator)
+                                Translator $translator,
+                                Di $di)
     {
-        $input = new Input('code');
+        $input = $di->get('Zend\InputFilter\Input', array('name'=>'code'));
         $input->setRequired(true);
         $input->getValidatorChain()
-              ->attach(new StringLength(array('min'=>2, 'max'=>5)))
-              ->attach(new Regex('/^[a-z]{2}(-[A-Z]{2})?$/'));
+              ->attach($di->get('Zend\Validator\StringLength', array('options'=>array('min'=>2, 'max'=>5))))
+              ->attach($di->get('Zend\Validator\Regex', array('pattern'=>'/^[a-z]{2}(-[A-Z]{2})?$/')));
 
         $input->getFilterChain()
-              ->attach(new StringToLower());
+              ->attach($di->get('Zend\Filter\StringToLower'));
 
         $this->add($input);
 
 
-        $input = new Input('module');
+        $input = $di->get('Zend\InputFilter\Input', array('name'=>'module'));
         $input->setRequired(true);
         $input->getValidatorChain()
-              ->attach(new CallbackValidator(
-                function ($value) use ($fetchService) {
-                    return $fetchService->fetch()->contains($value);
-                }
-              ));
+              ->attach($di->get('Zend\Validator\Callback',
+                       array('options'=>array('callback'=>function ($value) use ($fetchService) {
+                                return $fetchService->fetch()->contains($value);
+                            }))));
         $this->add($input);
 
         $this->translate = $translator;

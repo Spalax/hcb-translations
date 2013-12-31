@@ -44,8 +44,8 @@ class Upload extends AbstractInputFilter implements UploadInterface, DataMessage
         $input->setAllowEmpty(true);
         $input->setRequired(false);
         $input->getValidatorChain()
-              ->attach(new MimeType(array('text/plain')))
-              ->attach(new Extension('js'));
+              ->attach($di->get('Zend\Validator\File\MimeType', array('options'=>'text/plain')))
+              ->attach($di->get('Zend\Validator\File\Extension', array('options'=>'js')));
 
         $input->getFilterChain()
               ->attach($di->get('Zend\Filter\File\RenameUpload',
@@ -61,8 +61,8 @@ class Upload extends AbstractInputFilter implements UploadInterface, DataMessage
         $input->setAllowEmpty(true);
         $input->setRequired(false);
         $input->getValidatorChain()
-              ->attach(new MimeType(array('text/x-po')))
-              ->attach(new Extension('po'));
+              ->attach($di->get('Zend\Validator\File\MimeType', array('options'=>'text/x-po')))
+              ->attach($di->get('Zend\Validator\File\Extension', array('options'=>'po')));
 
         $input->getFilterChain()
             ->attach($di->get('Zend\Filter\File\RenameUpload',
