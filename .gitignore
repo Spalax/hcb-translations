@@ -3,3 +3,5 @@
 .buildpath
 .settings/*
 .project
+composer.lock
+composer.phar
