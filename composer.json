@@ -11,22 +11,17 @@
     "keywords": [
         "huskycms", "plugin", "module"
     ],
+    "license": "MIT",
+    "homepage": "http://huskycms.com/hcb-translations",
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Spalax/zf2-libs.git"
-        },
         {
             "type": "composer",
             "url": "http://spalax:spalax@packages.milsdev.com"
         }
     ],
-    "license": "MIT",
-
     "require-dev": {
         "phpunit/PHPUnit": "3.7.*"
     },
-
     "require": {
         "php": ">=5.3.3",
         "huskycms/hc-backend": "dev-master",
