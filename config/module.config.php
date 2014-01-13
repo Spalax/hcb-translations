@@ -25,14 +25,12 @@ return array(
         )
     ),
 
-    'huskycms' => array(
-        'hc-backend'=> array(
-            'packages' => array(
-                'hcb-translations' => array(
-                    'js'=>array(
-                        'type'=>'content',
-                        'http_path'=>'/js/src/hcb-translations'
-                    )
+    'hc-backend'=> array(
+        'packages' => array(
+            'hcb-translations' => array(
+                'js'=>array(
+                    'type'=>'content',
+                    'http_path'=>'/js/src/hcb-translations'
                 )
             )
         )
