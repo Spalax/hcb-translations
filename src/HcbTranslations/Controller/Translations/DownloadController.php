@@ -1,7 +1,7 @@
 <?php
 namespace HcbTranslations\Controller\Translations;
 
-use HcBackend\Controller\Collection\AbstractCommonResourceController;
+use HcBackend\Controller\Common\Collection\AbstractResourceController;
 use HcbTranslations\Options\ModuleOptions;
 use HcBackend\Service\FetchServiceInterface;
 use HcbTranslations\Service\Translations\Translation\CompressionService;
@@ -9,7 +9,7 @@ use HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse;
 use Zend\Mvc\MvcEvent;
 use Zf2Libs\View\Model\Json\Specific\StatusMessageDataModelFactoryInterface;
 
-class DownloadController extends AbstractCommonResourceController
+class DownloadController extends AbstractResourceController
 {
     /**
      * @var StatusMessageDataModelFactoryInterface

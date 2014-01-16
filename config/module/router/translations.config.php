@@ -19,7 +19,7 @@ return array(
                     'options' => array(
                         'with' => 'XMLHttpRequest',
                         'defaults' => array(
-                            'controller' => 'Collection-Translations-Resource'
+                            'controller' => 'HcbTranslations-Controller-Resource'
                         )
                     )
                 ),
@@ -28,7 +28,7 @@ return array(
                     'options' => array(
                         'route' => '/download/package.zip',
                         'defaults' => array(
-                            'controller' => 'Collection-Translations-Resource-Download'
+                            'controller' => 'HcbTranslations-Controller-Resource-Download'
                         )
                     )
                 ),
@@ -44,7 +44,7 @@ return array(
                             'options' => array(
                                 'verb' => 'post',
                                 'defaults' => array(
-                                    'controller' => 'Collection-Translations-Resource-File-Upload'
+                                    'controller' => 'HcbTranslations-Controller-Resource-File-Upload'
                                 )
                             )
                         )
@@ -56,7 +56,7 @@ return array(
                     'options' => array(
                         'verb' => 'delete',
                         'defaults' => array(
-                            'controller' => 'Collection-Translations-Resource-Delete'
+                            'controller' => 'HcbTranslations-Controller-Resource-Delete'
                         )
                     )
                 )
@@ -74,7 +74,7 @@ return array(
                     'options' => array(
                         'with' => 'XMLHttpRequest',
                         'defaults' => array(
-                            'controller' => 'Collection-Translations-List'
+                            'controller' => 'HcbTranslations-Controller-List'
                         )
                     )
                 ),
@@ -83,7 +83,7 @@ return array(
                     'options' => array(
                         'route' => '/modules',
                         'defaults' => array(
-                            'controller' => 'Collection-Translations-Modules-List'
+                            'controller' => 'HcbTranslations-Controller-Modules-List'
                         )
                     )
                 )
@@ -94,7 +94,7 @@ return array(
             'options' => array(
                 'verb' => 'post',
                 'defaults' => array(
-                    'controller' => 'Collection-Translations-Create'
+                    'controller' => 'HcbTranslations-Controller-Create'
                 )
             )
         )

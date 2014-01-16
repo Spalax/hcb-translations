@@ -1,10 +1,10 @@
 <?php
 return array(
-    'Collection-Translations-Resource',
-    'Collection-Translations-List',
-    'Collection-Translations-Modules-List',
-    'Collection-Translations-Create',
-    'Collection-Translations-Resource-Download',
-    'Collection-Translations-Resource-File-Upload',
-    'Collection-Translations-Resource-Delete',
+    'HcbTranslations-Controller-Resource',
+    'HcbTranslations-Controller-List',
+    'HcbTranslations-Controller-Modules-List',
+    'HcbTranslations-Controller-Create',
+    'HcbTranslations-Controller-Resource-Download',
+    'HcbTranslations-Controller-Resource-File-Upload',
+    'HcbTranslations-Controller-Resource-Delete',
 );

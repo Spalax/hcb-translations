@@ -1,12 +1,28 @@
 <?php
 return array(
-    'Collection-Translations-Resource' => 'HcBackend\Controller\Collection\CommonResourceController',
-    'Collection-Translations-List' => 'HcBackend\Controller\Collection\CommonListController',
-    'Collection-Translations-Modules-List' => 'HcBackend\Controller\Collection\CommonListController',
-    'Collection-Translations-Create' => 'HcBackend\Controller\Collection\CommonDataController',
-    'Collection-Translations-Resource-Delete' =>
-       'HcBackend\Controller\Collection\CommonResourceDeleteController',
-    'Collection-Translations-Resource-File-Upload' =>
-       'HcBackend\Controller\Collection\CommonResourceDataController',
-    'Collection-Translations-Resource-Download' => 'HcbTranslations\Controller\Translations\DownloadController'
+
+    // Controllers
+    'HcbTranslations-Controller-Resource' => 'HcBackend\Controller\Common\Collection\ResourceController',
+
+    'HcbTranslations-Controller-List' => 'HcBackend\Controller\Common\Collection\ListController',
+
+    'HcbTranslations-Controller-Modules-List' =>
+        'HcBackend\Controller\Common\Collection\ListController',
+
+    'HcbTranslations-Controller-Create' => 'HcBackend\Controller\Common\Collection\DataController',
+
+    'HcbTranslations-Controller-Resource-Delete' =>
+        'HcBackend\Controller\Common\Collection\ResourceDeleteController',
+
+    'HcbTranslations-Controller-Resource-File-Upload' =>
+        'HcBackend\Controller\Common\Collection\ResourceDataController',
+
+    'HcbTranslations-Controller-Resource-Download' =>
+        'HcbTranslations\Controller\Translations\DownloadController',
+
+    'HcbTranslations-Posts-Post-Data-PaginatorViewModel' => 'Zf2Libs\Paginator\ViewModel\JsonModel',
+
+    // Common
+    'HcbTranslations-PaginatorViewModel' => 'Zf2Libs\Paginator\ViewModel\JsonModel',
+    'HcbTranslations-Module-PaginatorViewModel' => 'Zf2Libs\Paginator\ViewModel\JsonModel'
 );

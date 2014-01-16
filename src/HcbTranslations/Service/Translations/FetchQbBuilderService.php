@@ -1,13 +1,13 @@
 <?php
 namespace HcbTranslations\Service\Translations;
 
-use HcBackend\Service\FetchQbBuilderServiceInterface;
+use HcBackend\Service\Fetch\Paginator\QueryBuilder\DataServiceInterface;
 use HcBackend\Service\Sorting\SortingServiceInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\QueryBuilder;
 use Zend\Stdlib\Parameters;
 
-class FetchQbBuilderService implements FetchQbBuilderServiceInterface
+class FetchQbBuilderService implements DataServiceInterface
 {
     /**
      * @var SortingServiceInterface
