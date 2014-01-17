@@ -9,6 +9,7 @@ define([
     'dgrid/extensions/CompoundColumns',
     'dgrid/extensions/DijitRegistry',
     'hc-backend/dgrid/_Selection',
+    'hc-backend/dgrid/_Refresher',
     'hc-backend/dgrid/_ListCustomRowsWidget',
     'dgrid/Keyboard',
     'dgrid/selector',
@@ -20,7 +21,7 @@ define([
     'dojo/i18n!../../nls/List'
 ], function (declare, lang, array, TranslationsStore, OnDemandGrid,
              ColumnHider, ColumnResizer, CompoundColumns, DijitRegistry,
-             _Selection, _ListCustomRowsWidget, Keyboard, selector,
+             _Selection, _Refresher, _ListCustomRowsWidget, Keyboard, selector,
              UpdateDialog, Download, put, on, router, translation) {
 
     return declare([
@@ -30,6 +31,7 @@ define([
         Keyboard,
         CompoundColumns,
         _Selection,
+        _Refresher,
         DijitRegistry,
         _ListCustomRowsWidget
     ], {
