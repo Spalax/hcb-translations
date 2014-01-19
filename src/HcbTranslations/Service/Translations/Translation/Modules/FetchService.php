@@ -5,15 +5,10 @@ use HcBackend\Service\Fetch\Paginator\ArrayCollection\DataServiceInterface;
 use HcbTranslations\Options\ModuleOptions;
 use HcBackend\Service\Filtration\Collection\FiltrationServiceInterface;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\ORM\EntityManager;
 use Zend\Stdlib\Parameters;
 
 class FetchService implements DataServiceInterface
 {
-    /**
-     * @var \Doctrine\ORM\EntityManager
-     */
-    protected $entityManager;
 
     /**
      * @var FiltrationServiceInterface
@@ -26,15 +21,12 @@ class FetchService implements DataServiceInterface
     protected $options;
 
     /**
-     * @param EntityManager $entityManager
      * @param FiltrationServiceInterface $filtrationService
      * @param ModuleOptions $options
      */
-    public function __construct(EntityManager $entityManager,
-                                FiltrationServiceInterface $filtrationService,
+    public function __construct(FiltrationServiceInterface $filtrationService,
                                 ModuleOptions $options)
     {
-        $this->entityManager = $entityManager;
         $this->filtration = $filtrationService;
         $this->options = $options;
     }
