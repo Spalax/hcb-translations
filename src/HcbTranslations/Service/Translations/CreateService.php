@@ -5,12 +5,12 @@ use HcbTranslations\Entity\Translation;
 use HcbTranslations\Data\Translations\CreateInterface;
 use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 
 class CreateService
 {
     /**
-     * @var EntityManager
+     * @var EntityManagerInterface
      */
     protected $entityManager;
 
@@ -25,11 +25,11 @@ class CreateService
     protected $options;
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityManagerInterface $entityManager
      * @param \HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse $createResponse
      * @param \HcbTranslations\Options\ModuleOptions $options
      */
-    public function __construct(EntityManager $entityManager,
+    public function __construct(EntityManagerInterface $entityManager,
                                 SaveResponse $createResponse,
                                 ModuleOptions $options)
     {

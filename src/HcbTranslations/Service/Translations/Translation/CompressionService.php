@@ -4,13 +4,13 @@ namespace HcbTranslations\Service\Translations\Translation;
 use HcbTranslations\Entity\Translation;
 use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Zend\Filter\Compress;
 
 class CompressionService
 {
     /**
-     * @var EntityManager
+     * @var EntityManagerInterface
      */
     protected $entityManager;
 
@@ -25,11 +25,11 @@ class CompressionService
     protected $response;
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityManagerInterface $entityManager
      * @param \HcbTranslations\Options\ModuleOptions $options
      * @param \HcbTranslations\Stdlib\Service\Response\Translations\CompressionResponse $response
      */
-    public function __construct(EntityManager $entityManager,
+    public function __construct(EntityManagerInterface $entityManager,
                                 ModuleOptions $options,
                                 CompressionResponse $response)
     {

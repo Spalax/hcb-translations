@@ -3,13 +3,13 @@ namespace HcbTranslations\Service\Translations\Translation;
 
 use HcbTranslations\Entity\Translation;
 use HcbTranslations\Options\ModuleOptions;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
 
 class DeleteService
 {
     /**
-     * @var EntityManager
+     * @var EntityManagerInterface
      */
     protected $entityManager;
 
@@ -24,11 +24,11 @@ class DeleteService
     protected $response;
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityManagerInterface $entityManager
      * @param ModuleOptions $options
      * @param \Zf2Libs\Stdlib\Service\Response\Messages\Response $response
      */
-    public function __construct(EntityManager $entityManager,
+    public function __construct(EntityManagerInterface $entityManager,
                                 ModuleOptions $options,
                                 Response $response)
     {

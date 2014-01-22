@@ -6,12 +6,12 @@ use HcbTranslations\Entity\Translation;
 use HcbTranslations\Service\Translations\Translation\Handle\HandlerFactory;
 use HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse;
 use HcbTranslations\Stdlib\Service\Response\Translations\UploadResponse;
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 
 class UploadService
 {
     /**
-     * @var EntityManager
+     * @var EntityManagerInterface
      */
     protected $entityManager;
 
@@ -26,11 +26,11 @@ class UploadService
     protected $handlerFactory;
 
     /**
-     * @param EntityManager $entityManager
-     * @param \HcbTranslations\Stdlib\Service\Response\Translations\UploadResponse $uploadResponse
+     * @param EntityManagerInterface $entityManager
+     * @param UploadResponse $uploadResponse
      * @param Handle\HandlerFactory $handlerFactory
      */
-    public function __construct(EntityManager $entityManager,
+    public function __construct(EntityManagerInterface $entityManager,
                                 UploadResponse $uploadResponse,
                                 HandlerFactory $handlerFactory)
     {
