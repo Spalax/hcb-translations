@@ -38,6 +38,7 @@ class Extractor implements ExtractorInterface
         return array('id'=>$translation->getId(),
                      'code'=>$translation->getCode(),
                      'module'=>$translation->getModule(),
+                     'hasJs'=>$translation->getHasJs(),
                      'jsUpdatedTimestamp'=>$jsUpdatedTimestamp,
                      'poUpdatedTimestamp'=>$poUpdatedTimestamp,
                      'createdTimestamp'=>$createdTimestamp);

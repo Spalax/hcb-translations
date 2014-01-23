@@ -6,12 +6,14 @@ define([
     'dijit/_WidgetsInTemplateMixin',
     'dojo-common/dialog/DestroyableDialog',
     'hc-backend/router',
+    'dojo/dom-class',
     'hcb-translations/store/Translations',
     'dojo/i18n!../../nls/List',
     'dojo/text!./templates/UpdateForm.html',
     'dojo-common/form/FileInputAuto'
 ], function (declare, lang, _Widget, _TemplatedMixin, _WidgetsInTemplateMixin,
-             DestroyableDialog, router, TranslationsStore, translations, updateFormTemplate) {
+             DestroyableDialog, router, domClass, TranslationsStore,
+             translations, updateFormTemplate) {
     var _EditLayout = declare('UpdateDialog.EditLayout', [
             _Widget,
             _TemplatedMixin,
@@ -60,6 +62,20 @@ define([
                     throw e;
                 }
             },
+
+            _setHasJsAttr: function (hasJs) {
+                try {
+                    if (!hasJs) {
+                        domClass.add(this.jsBlockNode, 'dijitHidden');
+                    } else {
+                        domClass.remove(this.jsBlockNode, 'dijitHidden');
+                    }
+                } catch (e) {
+                     console.error(this.declaredClass, arguments, e);
+                     throw e;
+                }
+            },
+
             postCreate: function () {
                 try {
                     this.inherited(arguments);
@@ -69,6 +85,7 @@ define([
                         this.refresh(key);
                     };
                     this.poFileWidget.on('complete', lang.hitch(this, func, 'po'));
+
                     this.jsFileWidget.on('complete', lang.hitch(this, func, 'js'));
                 } catch (e) {
                     console.error(this.declaredClass + ' ' + arguments.callee.nom, arguments, e);
@@ -80,24 +97,30 @@ define([
         _Widget,
         _TemplatedMixin
     ], {
-        templateString: '<a href="javascript:;" data-dojo-attach-event="onClick: _click">${!_t.uploadLinkLabel}</a>',
+        templateString: '<a href="javascript:;" ' +
+                        'data-dojo-attach-event="onClick: _click">${!_t.uploadLinkLabel}</a>',
+
         _t: translations,
+
         postMixInProperties: function () {
             try {
                 if (!this.identifier) {
                     throw 'Data must have valid set of keys';
                 }
+
                 this.inherited(arguments);
             } catch (e) {
                 console.error(this.declaredClass + ' ' + arguments.callee.nom, arguments, e);
                 throw e;
             }
         },
+
         _click: function () {
             try {
                 this.inherited(arguments);
                 var dialog = new DestroyableDialog({ title: translations.uploadDialogTitle });
-                var layout = new _EditLayout({ identifier: this.identifier });
+                var layout = new _EditLayout({ identifier: this.identifier,
+                                               hasJs: this.hasJs });
                 dialog.addChild(layout);
                 dialog.show();
             } catch (e) {

@@ -54,7 +54,10 @@ class DeleteService
 
             @unlink($package->getPoFilePath($translationEntity->getCode()));
             @unlink($package->getMoFilePath($translationEntity->getCode()));
-            @unlink($package->getJsFilePath($translationEntity->getCode()));
+
+            if ($package->hasJs()) {
+                @unlink($package->getJsFilePath($translationEntity->getCode()));
+            }
 
             $this->entityManager->flush();
             $this->entityManager->commit();

@@ -1,5 +1,6 @@
 <div data-dojo-attach-point="containerNode">
 
+    <div data-dojo-attach-point="jsBlockNode">
     ${!_t.jsFileLabel} (<i>Last Uploaded: <span data-dojo-attach-point="jsUpdatedNode"></span></i>)
     <input class="${baseClass}JsFile"
            data-dojo-type="dojo-common/form/FileInputAuto"
@@ -14,19 +15,21 @@
                             realSize: 36,
                             blurDelay: 0" />
     ${!_t.jsFileHelp}
-
-    ${!_t.poFileLabel} (<i>Last Uploaded: <span data-dojo-attach-point="poUpdatedNode"></span></i>)
-    <input class="${baseClass}PoFile"
-           data-dojo-type="dojo-common/form/FileInputAuto"
-           data-dojo-attach-point="poFileWidget"
-           data-dojo-props="name:'poFile',
-                            url: '${uploadUrl}',
-                            triggerEvent: 'onchange',
-                            uploadMessage: '${!_t.poFileUploadMessage}',
-                            failedUploadMessage: '${!_t.poFileFailedUploadMessage}',
-                            label: '${!_t.poFileUploaderLabel}',
-                            duration: 1,
-                            realSize: 36,
-                            blurDelay: 0" />
-    ${!_t.poFileHelp}
+    </div>
+    <div data-dojo-attach-point="poBlockNode">
+        ${!_t.poFileLabel} (<i>Last Uploaded: <span data-dojo-attach-point="poUpdatedNode"></span></i>)
+        <input class="${baseClass}PoFile"
+               data-dojo-type="dojo-common/form/FileInputAuto"
+               data-dojo-attach-point="poFileWidget"
+               data-dojo-props="name:'poFile',
+                                url: '${uploadUrl}',
+                                triggerEvent: 'onchange',
+                                uploadMessage: '${!_t.poFileUploadMessage}',
+                                failedUploadMessage: '${!_t.poFileFailedUploadMessage}',
+                                label: '${!_t.poFileUploaderLabel}',
+                                duration: 1,
+                                realSize: 36,
+                                blurDelay: 0" />
+        ${!_t.poFileHelp}
+    </div>
 </div>

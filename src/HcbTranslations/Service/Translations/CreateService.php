@@ -3,6 +3,7 @@ namespace HcbTranslations\Service\Translations;
 
 use HcbTranslations\Entity\Translation;
 use HcbTranslations\Data\Translations\CreateInterface;
+use HcbTranslations\Options\Module\Package;
 use HcbTranslations\Options\ModuleOptions;
 use HcbTranslations\Stdlib\Service\Response\Translations\SaveResponse;
 use Doctrine\ORM\EntityManagerInterface;
@@ -39,23 +40,23 @@ class CreateService
     }
 
     /**
-     * @param string $module
+     * @param Package $package
      * @param string $langCode
      * @throws Exception\DomainException
      */
-    protected function createDefaultTranslationFiles($module, $langCode)
+    protected function createDefaultTranslationFiles(Package $package, $langCode)
     {
-        $packages = $this->options->getPackages();
-        $package = $packages->getPackage($module);
-
         if (!copy($package->getPOTFilePath(), $package->getPoFilePath($langCode))) {
             throw new Exception\DomainException("Could not copy GETTEXT file[".$package->getPOTFilePath()."]
                                                  to the [".$package->getPoFilePath($langCode)."]");
         }
 
-        if (!copy($package->getJsTemplateFilePath(), $package->getJsFilePath($langCode))) {
-            throw new Exception\DomainException("Could not copy JS file[".$package->getJsTemplateFilePath()."]
-                                                 to the [".$package->getJsFilePath($langCode)."]");
+        if ($package->hasJs()) {
+            if (!copy($package->getJsTemplateFilePath(), $package->getJsFilePath($langCode))) {
+                throw new Exception\DomainException("Could not copy JS file["
+                                                    .$package->getJsTemplateFilePath()."] ".
+                                                    "to the [".$package->getJsFilePath($langCode)."]");
+            }
         }
     }
 
@@ -78,13 +79,16 @@ class CreateService
                 return $this->createResponse;
             }
 
-            $this->createDefaultTranslationFiles($createData->getModule(),
-                                                 $createData->getCode());
+            $packages = $this->options->getPackages();
+            $package = $packages->getPackage($createData->getModule());
+
+            $this->createDefaultTranslationFiles($package, $createData->getCode());
 
             $newEntity = new Translation();
 
             $newEntity->setCode($createData->getCode());
             $newEntity->setModule($createData->getModule());
+            $newEntity->setHasJs((int)$package->hasJs());
 
             $this->entityManager->persist($newEntity);
 

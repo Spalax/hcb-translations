@@ -10,6 +10,8 @@ class Package
      */
     protected $package;
 
+    protected $hasJs = false;
+
     /**
      * @param array $package
      * @throws \HcBackend\Options\Exception\DomainException
@@ -17,15 +19,15 @@ class Package
      */
     public function __construct(array $package)
     {
-        if (!array_key_exists('gettext', $package) || !array_key_exists('js', $package)) {
-            throw new Exception\InvalidArgumentException('Package must contains js and gettext keys');
+        if (!array_key_exists('gettext', $package) && !array_key_exists('js', $package)) {
+            throw new Exception\InvalidArgumentException('Package must contains js or gettext key at least');
         }
 
         if (!array_key_exists('mo', $package['gettext'])) {
             $package['gettext']['mo'] = '%s.mo';
         }
 
-        if (!is_dir($package['js']) || !is_writable($package['js'])) {
+        if (array_key_exists('js', $package) && (!is_dir($package['js']) || !is_writable($package['js']))) {
             throw new Exception\DomainException("Directory ".$package['js']." must be writable directory");
         }
 
@@ -40,6 +42,12 @@ class Package
         if (!array_key_exists('pot', $package['gettext']) ||
             !is_readable($package['gettext']['pot'])) {
             throw new Exception\DomainException("POT file must be defined for gettext in current package");
+        }
+
+        if (array_key_exists('js', $package)) {
+            $this->hasJs = true;
+        } else {
+            $package['js'] = '';
         }
 
         $this->package = $package;
@@ -67,6 +75,14 @@ class Package
     public function getPathToJsLangDir()
     {
         return $this->package['js'];
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasJs()
+    {
+        return $this->hasJs;
     }
 
     /**

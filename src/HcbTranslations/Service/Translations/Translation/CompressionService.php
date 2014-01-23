@@ -51,13 +51,16 @@ class CompressionService
         $packageDir = $this->options->getLangTemporaryPath();
 
         $poFilePath = $package->getPoFilePath($translationEntity->getCode());
-        $jsFilePath = $package->getJsFilePath($translationEntity->getCode());
 
         $zipArchiveFile = new \ezcArchiveCharacterFile($packageDir.'/'.uniqid('package').'.zip', true);
         $zipArchive = new \ezcArchiveZip($zipArchiveFile);
 
         $zipArchive->append($poFilePath, dirname($poFilePath));
-        $zipArchive->append($jsFilePath, dirname($jsFilePath));
+
+        if ($package->hasJs()) {
+            $jsFilePath = $package->getJsFilePath($translationEntity->getCode());
+            $zipArchive->append($jsFilePath, dirname($jsFilePath));
+        }
 
         $zipArchive->close();
 

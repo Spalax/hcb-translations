@@ -29,6 +29,13 @@ class Translation implements EntityInterface
     private $code;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="has_js", type="integer", nullable=false)
+     */
+    private $hasJs;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="module", type="string", length=50, nullable=false)
@@ -64,6 +71,29 @@ class Translation implements EntityInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set has js
+     *
+     * @param int $hasJs
+     * @return Translation
+     */
+    public function setHasJs($hasJs)
+    {
+        $this->hasJs = $hasJs;
+
+        return $this;
+    }
+
+    /**
+     * Get has js
+     *
+     * @return int
+     */
+    public function getHasJs()
+    {
+        return $this->hasJs;
     }
 
     /**

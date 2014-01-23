@@ -85,7 +85,8 @@ define([
                                 if (!object || !object.id) {
                                     return value;
                                 }
-                                var dialog = new UpdateDialog({ identifier: object.id });
+                                var dialog = new UpdateDialog({ identifier: object.id,
+                                                                hasJs: object.hasJs });
                                 dialog.placeAt(cell);
                             } catch (e) {
                                 console.error(this.declaredClass + ' ' + arguments.callee.nom, arguments, e);
