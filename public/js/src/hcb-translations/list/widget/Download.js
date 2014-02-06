@@ -5,9 +5,9 @@ define([
     'dijit/_TemplatedMixin',
     'dojo/request',
     'hc-backend/router',
-    'dojo-common/response/_MessageMixin',
-    'dojo-common/response/_StatusMixin',
-    'dojo-common/response/_DataMixin',
+    'dojo-common/response/Message',
+    'dojo-common/response/Status',
+    'dojo-common/response/Data',
     'dojo/i18n!../../nls/List'
 ], function (declare, lang, _Widget, _TemplatedMixin, request,
              router, _MessageMixin, _StatusMixin, _DataMixin,
